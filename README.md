@@ -1,6 +1,8 @@
 # produtos-api
-This project is to do a CRUD for Ptoducts 
-<img src="nodejs.svg" width="60%" />
+This project is to do a CRUD for Ptoducts <br>
+
+<img src="Nodejs.svg" width="60%" /><br>
+
 Stacks
 
 
