@@ -1,0 +1,36 @@
+{
+  "name": "produtos-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:GustavoFSProg/produtos-api.git",
+  "author": "Gustavo <gustavosohne38@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src -d dist"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-node": "^0.0.1-security",
+    "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "mongoose": "^5.9.21",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  }
+}
