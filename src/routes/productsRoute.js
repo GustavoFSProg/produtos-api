@@ -3,7 +3,7 @@ import productController from '../controllers/productController'
 
 const routes = new Router()
 
-const routeList = [
+const productsRouteList = [
   routes.get('/', productController.getAll),
   routes.get('/:id', productController.getById),
   routes.post('/register', productController.create),
@@ -11,4 +11,4 @@ const routeList = [
   routes.delete('/del/:id', productController.deletar),
 ]
 
-export default routeList
+export default productsRouteList
