@@ -15,6 +15,7 @@
     "build": "babel src -d dist"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@sendgrid/mail": "^7.2.1",
     "babel-cli": "^6.26.0",
     "babel-node": "^0.0.1-security",
@@ -24,9 +25,12 @@
     "express": "^4.17.1",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
+    "material-ui": "^0.20.2",
     "md5": "^2.2.1",
     "mongoose": "^5.9.21",
-    "nodemon": "^2.0.4"
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4",
+    "sharp": "^0.25.4"
   },
   "devDependencies": {
     "eslint": "^7.4.0",

@@ -1,3 +1,6 @@
+import sharp from 'sharp'
+import fs from 'fs'
+import path from 'path'
 import productModel from '../models/productModel'
 
 async function getAll(req, res) {
@@ -47,12 +50,24 @@ async function update(req, res) {
 
 async function create(req, res) {
   try {
+    const { filename: image } = req.file
+
+    const [name] = image.split('.')
+    const filename = `${name}.jpg`
+
+    await sharp(req.file.path)
+      .resize(500)
+      .jpeg({ quality: 70 })
+      .toFile(path.resolve(req.file.destination, 'resized', filename))
+
+    fs.unlinkSync(req.file.path)
+
     await productModel.create({
       title: req.body.title,
       slug: req.body.slug,
       price: req.body.price,
       description: req.body.description,
-      image: req.body.image,
+      image: filename,
     })
 
     return res.status(201).send({ message: 'Produto cadastrado com sucesso! ' })
