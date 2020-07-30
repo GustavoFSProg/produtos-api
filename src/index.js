@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import path from 'path'
 import routesList from './routes/indexRoutes'
 
 dotenv.config()
@@ -20,8 +21,20 @@ app.use(cors())
 
 const { PORT } = process.env
 
-app.listen(PORT)
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
+
+app.use((req, res, next) => {
+  req.io = io
+
+  next()
+})
+
 app.use('/', routesList)
+
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')))
+
+app.listen(PORT)
 
 console.log(`Api Running Free on port ${PORT}`)
 

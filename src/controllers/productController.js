@@ -1,6 +1,6 @@
-import sharp from 'sharp'
-import fs from 'fs'
-import path from 'path'
+// import sharp from 'sharp'
+// import fs from 'fs'
+// import path from 'path'
 import productModel from '../models/productModel'
 
 async function getAll(req, res) {
@@ -55,12 +55,12 @@ async function create(req, res) {
     const [name] = image.split('.')
     const filename = `${name}.jpg`
 
-    await sharp(req.file.path)
-      .resize(500)
-      .jpeg({ quality: 70 })
-      .toFile(path.resolve(req.file.destination, 'resized', filename))
+    // await sharp(req.file.path)
+    //   .resize(500)
+    //   .jpeg({ quality: 70 })
+    //   .toFile(path.resolve(req.file.destination, 'resized', filename))
 
-    fs.unlinkSync(req.file.path)
+    // fs.unlinkSync(req.file.path)
 
     await productModel.create({
       title: req.body.title,
